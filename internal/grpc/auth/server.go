@@ -64,6 +64,7 @@ func (s *serverAPI) IsAdmin(ctx context.Context, req *ssov1.IsAdminRequest) (*ss
 	isAdmin, err := s.auth.IsAdmin(ctx, req.GetUserId())
 	if err != nil {
 		//TODO: ...
+
 		return nil, status.Error(codes.Internal, "internal server error")
 	}
 
